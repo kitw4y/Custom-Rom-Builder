@@ -4,12 +4,8 @@ stream = os.popen('uname')
 output = stream.read()
 
 if output.strip() == "Linux":
-    os.system("mkdir ro && cd ro")
-    os.system("mkdir -p ~/bin")
-    os.system("curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo && chmod a+x ~/bin/repo")
-    os.system("PATH='$HOME/bin:$PATH'")
-    os.system("repo init -u https://github.com/RisingTechOSS/android -b fourteen --git-lfs && repo sync -c --no-clone-bundle --optimized-fetch --prune --force-sync -j$(nproc --all)")
-
+    os.system("rm -rf ro && ls")
+    
     gitName = str(input("Enter your git User Name : "))
     gitEmail = str(input("Enter your git Email : "))
 
