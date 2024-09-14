@@ -9,6 +9,9 @@ if output.strip() == "Linux":
     os.system("mkdir -p ~/bin")
     os.system("curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo && chmod a+x ~/bin/repo")
     os.system("PATH='$HOME/bin:$PATH'")
+
+    print("")
+    os.system("python3 main.py")
     
 else:
     print("Only works on Linux")
