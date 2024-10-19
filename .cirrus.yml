@@ -1,0 +1,16 @@
+task:
+  name: Test
+  skip: $CIRRUS_BRANCH == 'main'
+  only_if: $CIRRUS_REPO_OWNER == 'ROM-builders'
+  timeout_in: 2m
+  persistent_worker:
+    labels:
+      name: lang
+    isolation:
+      container:
+        image: apon77/aosp:cirrus
+        cpu: 2
+        memory: 4G
+  env_script: env
+  show_script: cat $CIRRUS_WORKING_DIR/build_rom.sh
+  test_script: df -h
